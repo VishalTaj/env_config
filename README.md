@@ -12,6 +12,17 @@ Add this line to your application's Gemfile:
 gem 'env_config', git: 'git@github.com:VishalTaj/env_config.git'
 ```
 
+Add this line to `application.rb` file:
+
+```ruby
+config.env_config = EnvConfig.configure, {
+ name: 'Settings',
+ env: Rails.env
+}
+```
+
+Where `name` will be the Constant which we can use to access configuration variables.
+
 And then execute:
 
     $ bundle
