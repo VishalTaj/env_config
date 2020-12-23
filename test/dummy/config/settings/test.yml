@@ -1,0 +1,9 @@
+hello: 'World'
+single:
+  - test
+  - working
+nested:
+  - value:
+    - test
+    - working
+  - working

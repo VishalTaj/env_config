@@ -5,11 +5,13 @@ module EnvConfig
     PathNotFound = Class.new(StandardError)
     attr_accessor :settings
 
-    def self.load_path(env)
-      settings_path = File.join(Dir.pwd, 'config', 'settings.yml')
-      env_path = File.join(Dir.pwd, 'config', 'settings', "#{env}.yml")
+    def self.load_path(env, root_path)
+      rails_root = root_path || Dir.pwd
+      settings_path = File.join(rails_root, 'config', 'settings.yml')
+      env_path = File.join(rails_root, 'config', 'settings', "#{env}.yml")
       settings_hash = {}
       env_hash = {}
+ 
       settings_hash = (YAML.load_file(settings_path) || {}) if File.exist?(settings_path)
       env_hash = (YAML.load_file(env_path) || {}) if File.exist?(env_path)
       to_ostruct(settings_hash.merge(env_hash))

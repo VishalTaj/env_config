@@ -1,4 +1,21 @@
-$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
-require 'env_config'
+# Configure Rails Environment
+ENV['RAILS_ENV'] = 'test'
 
-require 'minitest/autorun'
+ENV['RAILS_ROOT'] = File.expand_path('../test/dummy', __dir__)
+
+require File.expand_path('../test/dummy/config/environment.rb', __dir__)
+require 'rails/test_help'
+
+# Filter out Minitest backtrace while allowing backtrace from other libraries
+# to be shown.
+Minitest.backtrace_filter = Minitest::BacktraceFilter.new
+
+# Load support files
+# Dir['#{File.dirname(__FILE__)}/support/**/*.rb'].each { |f| require f }
+
+# Load fixtures from the engine
+if ActiveSupport::TestCase.respond_to?(:fixture_path=)
+  ActiveSupport::TestCase.fixture_path = File.expand_path('config', __dir__)
+  ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
+  ActiveSupport::TestCase.fixtures :all
+end
