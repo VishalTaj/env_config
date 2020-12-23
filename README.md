@@ -6,6 +6,10 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
+Run execute:
+
+    $ bundle
+
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -25,10 +29,6 @@ config.env_config = EnvConfig.configure, {
 ```
 
 Where `name` will be the Constant which we can use to access configuration variables.
-
-And then execute:
-
-    $ bundle
 
 ## Usage
 
