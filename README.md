@@ -11,6 +11,9 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'env_config', git: 'git@github.com:VishalTaj/env_config.git'
 ```
+Run this command to generate env files:
+
+    $ rails g env_config:install
 
 Add this line to `application.rb` file:
 
@@ -29,7 +32,10 @@ And then execute:
 
 ## Usage
 
-    $ rails g env_config:install
+```ruby
+Settings.env_variable
+```
+
 
 ## Development
 
