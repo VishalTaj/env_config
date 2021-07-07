@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/09c8d7c7cbf06f7d41e1/maintainability)](https://codeclimate.com/github/VishalTaj/env_config/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/VishalTaj/env_config/badge.svg?branch=master)](https://coveralls.io/github/VishalTaj/env_config?branch=master)
-[![Build Status](https://travis-ci.org/VishalTaj/env_config.svg?branch=master)](https://travis-ci.org/VishalTaj/env_config)
+[![Build Status](https://travis-ci.com/VishalTaj/env_config.svg?branch=master)](https://travis-ci.com/VishalTaj/env_config)
 
 EnvConfig helps to store environment specific variable this is flexible option of maintaining environment variable.
 

@@ -4,5 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
+  gem 'coveralls', require: false
   gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 end
