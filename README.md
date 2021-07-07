@@ -1,11 +1,10 @@
 # EnvConfig
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/09c8d7c7cbf06f7d41e1/maintainability)](https://codeclimate.com/github/VishalTaj/env_config/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/VishalTaj/env_config/badge.svg?branch=master)](https://coveralls.io/github/VishalTaj/env_config?branch=master)
+[![Build Status](https://travis-ci.org/VishalTaj/env_config.svg?branch=master)](https://travis-ci.org/VishalTaj/env_config)
 
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/env_config`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+EnvConfig helps to store environment specific variable this is flexible option of maintaining environment variable.
 
 ## Installation
 
