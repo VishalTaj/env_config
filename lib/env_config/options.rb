@@ -2,27 +2,30 @@ require 'ostruct'
 
 module EnvConfig
   class Options < OpenStruct
+    # Options takes care parsing yaml files to ruby openstruct.
+
     PathNotFound = Class.new(StandardError)
     attr_accessor :settings
 
-    def self.load_path(env, root_path)
-      rails_root = root_path || Dir.pwd
-      settings_path = File.join(rails_root, 'config', 'settings.yml')
-      env_path = File.join(rails_root, 'config', 'settings', "#{env}.yml")
-      settings_hash = {}
-      env_hash = {}
- 
-      settings_hash = (YAML.load_file(settings_path) || {}) if File.exist?(settings_path)
-      env_hash = (YAML.load_file(env_path) || {}) if File.exist?(env_path)
-      to_ostruct(settings_hash.merge(env_hash))
+    def self.load_path(env, root_path = Dir.pwd)
+      # loading settings files from project directory
+      settings_path = File.join(root_path, 'config', 'settings.yml')
+      env_path = File.join(root_path, 'config', 'settings', "#{env}.yml")
+
+      # convert yaml to hash
+      settings_hash = File.exist?(settings_path) ? (YAML.load_file(settings_path) || {}) : {}
+      env_hash = File.exist?(env_path) ? (YAML.load_file(env_path) || {}) : {}
+
+      # parse it to the envconfig object
+      parse_env(settings_hash.merge(env_hash))
     end
 
-    def self.to_ostruct(object)
+    def self.parse_env(object)
       case object
       when Hash
-        new(Hash[object.map { |k, v| [k, to_ostruct(v)] }])
+        new(Hash[object.map { |k, v| [k, parse_env(v)] }])
       when Array
-        object.map { |x| to_ostruct(x) }
+        object.map { |x| parse_env(x) }
       else
         object
       end

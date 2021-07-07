@@ -14,9 +14,11 @@ module EnvConfig
     end
 
     def load_path
-      Object.send(:remove_const, @name) if Object.const_defined?(@name)
-      Object.const_set(@name, EnvConfig::Options.load_path(@env, @root_path).freeze)
-      Object.const_defined?(@name)
+      # Clear or remove constant if already defined.
+      Object.send(:remove_const, name) if Object.const_defined?(name)
+      # Setting a constant with value of name.
+      Object.const_set(name, EnvConfig::Options.load_path(env, root_path).freeze)
+      Object.const_defined?(name)
     end
   end
 end

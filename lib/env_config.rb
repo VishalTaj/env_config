@@ -4,8 +4,8 @@ require 'env_config/options'
 
 module EnvConfig
   class << self
-    def configure(name: 'Settings', env: 'development')
-      @configure ||= Configuration.new(name, env)
+    def configure(name: 'Settings', env: 'development', root_path: nil)
+      @configure ||= Configuration.new(name, env, root_path)
     end
 
     def reload!

@@ -24,4 +24,8 @@ class EnvConfigTest < ActiveSupport::TestCase
   def test_if_accept_non_env_key
     assert_equal 'yes', ::Setting.working
   end
+
+  def test_if_return_nil
+    assert_nil ::Setting.checkit
+  end
 end
