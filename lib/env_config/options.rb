@@ -7,7 +7,7 @@ module EnvConfig
     PathNotFound = Class.new(StandardError)
     attr_accessor :settings
 
-    def self.load_path(env, root_path = Dir.pwd)
+    def self.load_path(env, root_path)
       # loading settings files from project directory
       settings_path = File.join(root_path, 'config', 'settings.yml')
       env_path = File.join(root_path, 'config', 'settings', "#{env}.yml")

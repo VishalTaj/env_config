@@ -5,7 +5,7 @@ module EnvConfig
     def initialize(name = 'Settings', env = 'development', root_path = nil)
       @name = name
       @env = env
-      @root_path = root_path || ENV['RAILS_ROOT']
+      @root_path = root_path || ENV['RAILS_ROOT'] || Dir.pwd
       load_path
     end
 

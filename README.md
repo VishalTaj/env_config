@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/VishalTaj/env_config/badge.svg?branch=master)](https://coveralls.io/github/VishalTaj/env_config?branch=master)
 [![Build Status](https://travis-ci.com/VishalTaj/env_config.svg?branch=master)](https://travis-ci.com/VishalTaj/env_config)
 
+
 EnvConfig helps to store environment specific variable this is flexible option of maintaining environment variable.
 
 ## Installation
@@ -15,7 +16,7 @@ Run execute:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'env_config', git: 'git@github.com:VishalTaj/env_config.git'
+gem 'env_config', git: 'git@github.com:VishalTaj/env_config.git', tag: 'v0.1.0'
 ```
 Run this command to generate env files:
 
